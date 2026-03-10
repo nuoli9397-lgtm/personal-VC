@@ -590,32 +590,26 @@
     </script>
 
     <!-- Coze Chat Bubble (右下角) -->
-    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
-    <script>
-      function getCozePatToken() {
-        var key = "COZE_PAT_TOKEN";
-        var t = "";
-        try {
-          t = localStorage.getItem(key) || "";
-        } catch (e) {}
-        if (!t) {
-          t = window.prompt("请输入 Coze PAT Token（仅保存在本机浏览器）", "") || "";
-          if (t) {
-            try {
-              localStorage.setItem(key, t);
-            } catch (e) {}
-          }
-        }
-        return t;
+    
+<script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
+<script>
+  new CozeWebSDK.WebChatClient({
+    config: {
+      bot_id: '7614511644510765066',
+    },
+    componentProps: {
+      title: 'Coze',
+    },
+    auth: {
+      type: 'token',
+      token: 'pat_6rU99KFVLUHMxPtwHStVg6Iugx5KhrNH1VY1Bt9caR2ZR3B5wZb0vtqj8Fd7lx9X',
+      onRefreshToken: function () {
+        return 'pat_6rU99KFVLUHMxPtwHStVg6Iugx5KhrNH1VY1Bt9caR2ZR3B5wZb0vtqj8Fd7lx9X'
       }
-      function refreshCozePatToken() {
-        return getCozePatToken();
-      }
-      new CozeWebSDK.WebChatClient({
-        config: { bot_id: "7614511644510765066" },
-        componentProps: { title: "Coze" },
-        auth: { type: "token", token: getCozePatToken(), onRefreshToken: refreshCozePatToken },
-      });
-    </script>
+    }
+  });
+</script>
+ 
   </body>
 </html>
+

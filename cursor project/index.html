@@ -1,0 +1,621 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>李若涵｜个人主页</title>
+    <meta
+      name="description"
+      content="李若涵｜安徽大学计算机系｜产品运营 × AI 应用。科大讯飞产品运营助理实习、中国机器人大赛一等奖、跨境电商 AI 答疑助手（右下角可体验）。"
+    />
+    <meta property="og:title" content="李若涵｜个人主页" />
+    <meta
+      property="og:description"
+      content="产品运营 × AI 应用：案例、经历与右下角实时聊天 Demo。"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#F7F9FF" />
+    <link rel="icon" href="favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg0: #ffffff;
+        --bg1: #f7f9ff;
+        --text: rgba(16, 24, 40, 0.94);
+        --muted: rgba(16, 24, 40, 0.62);
+        --line: rgba(16, 24, 40, 0.12);
+        --panel: rgba(255, 255, 255, 0.78);
+        --panel2: rgba(255, 255, 255, 0.58);
+        --a1: #7dd3fc; /* 淡蓝 */
+        --a2: #a78bfa; /* 淡紫 */
+        --shadow: 0 18px 55px rgba(16, 24, 40, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(980px 540px at 18% 10%, rgba(125, 211, 252, 0.32), transparent 62%),
+          radial-gradient(900px 560px at 84% 14%, rgba(167, 139, 250, 0.26), transparent 60%),
+          radial-gradient(1100px 680px at 50% 96%, rgba(125, 211, 252, 0.14), transparent 55%),
+          linear-gradient(180deg, var(--bg0), var(--bg1));
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(1px 1px at 12% 22%, rgba(16, 24, 40, 0.08), transparent 60%),
+          radial-gradient(1px 1px at 78% 34%, rgba(16, 24, 40, 0.06), transparent 60%),
+          radial-gradient(1px 1px at 44% 66%, rgba(16, 24, 40, 0.06), transparent 60%),
+          radial-gradient(1px 1px at 65% 78%, rgba(16, 24, 40, 0.05), transparent 60%);
+        opacity: 0.28;
+        mix-blend-mode: multiply;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      strong { font-weight: 800; }
+
+      .container {
+        width: min(1080px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        padding: 16px 0;
+        backdrop-filter: blur(12px);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+        border-bottom: 1px solid rgba(16, 24, 40, 0.08);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+      .mark {
+        width: 32px;
+        height: 32px;
+        border-radius: 12px;
+        border: 1px solid rgba(16, 24, 40, 0.10);
+        background: rgba(255, 255, 255, 0.75);
+        box-shadow: 0 12px 28px rgba(16, 24, 40, 0.10);
+        position: relative;
+        overflow: hidden;
+      }
+      .mark::after {
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background:
+          radial-gradient(circle at 30% 30%, rgba(125, 211, 252, 0.85), rgba(125, 211, 252, 0) 60%),
+          radial-gradient(circle at 75% 45%, rgba(167, 139, 250, 0.65), rgba(167, 139, 250, 0) 60%);
+        transform: rotate(18deg);
+        opacity: 0.75;
+      }
+      .brand-title {
+        display: grid;
+        gap: 1px;
+        min-width: 0;
+      }
+      .brand-title strong {
+        font-weight: 800;
+        letter-spacing: 0.2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .brand-title span {
+        font-size: 12px;
+        color: var(--muted);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(16, 24, 40, 0.12);
+        background: rgba(255, 255, 255, 0.72);
+        color: rgba(16, 24, 40, 0.88);
+        font-size: 12px;
+        transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+      }
+      .chip:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.90);
+        border-color: rgba(16, 24, 40, 0.18);
+      }
+      .chip.primary {
+        border-color: rgba(125, 211, 252, 0.55);
+        background: linear-gradient(180deg, rgba(125, 211, 252, 0.30), rgba(167, 139, 250, 0.18));
+      }
+
+      .hero {
+        position: relative;
+        margin: 44px 0 0;
+        padding: 34px 0 26px;
+      }
+      .watermark {
+        position: absolute;
+        inset: -16px 0 auto 0;
+        display: grid;
+        place-items: center;
+        pointer-events: none;
+        opacity: 0.24;
+      }
+      .watermark span {
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        font-size: min(22vw, 220px);
+        background-image: radial-gradient(rgba(16, 24, 40, 0.18) 1px, transparent 1.7px);
+        background-size: 7px 7px;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 24px rgba(125, 211, 252, 0.12);
+      }
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 20px;
+        align-items: start;
+      }
+      @media (max-width: 920px) {
+        .hero-grid { grid-template-columns: 1fr; }
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+        color: rgba(16, 24, 40, 0.62);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, var(--a1), var(--a2));
+        box-shadow: 0 0 0 4px rgba(125, 211, 252, 0.18);
+      }
+      .title {
+        margin: 14px 0 10px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.06;
+        font-size: 46px;
+      }
+      @media (max-width: 520px) {
+        .title { font-size: 34px; }
+      }
+      .subtitle {
+        margin: 0;
+        color: rgba(16, 24, 40, 0.70);
+        line-height: 1.75;
+        font-size: 14px;
+        max-width: 72ch;
+      }
+      .cta {
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(16, 24, 40, 0.12);
+        background: rgba(255, 255, 255, 0.76);
+        color: rgba(16, 24, 40, 0.88);
+        font-weight: 600;
+        font-size: 13px;
+        transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.92);
+        border-color: rgba(16, 24, 40, 0.18);
+      }
+      .btn.primary {
+        color: rgba(16, 24, 40, 0.92);
+        border-color: rgba(125, 211, 252, 0.55);
+        background: linear-gradient(180deg, rgba(125, 211, 252, 0.55), rgba(167, 139, 250, 0.40));
+        box-shadow: 0 18px 52px rgba(125, 211, 252, 0.16);
+      }
+
+      .stats {
+        border: 1px solid rgba(16, 24, 40, 0.10);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @media (max-width: 920px) {
+        .stats-row { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 520px) {
+        .stats-row { grid-template-columns: 1fr; }
+      }
+      .stat {
+        padding: 16px 16px;
+        border-right: 1px solid rgba(16, 24, 40, 0.08);
+      }
+      .stat:last-child { border-right: 0; }
+      .stat strong {
+        display: block;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+      .stat span {
+        display: block;
+        margin-top: 8px;
+        color: rgba(16, 24, 40, 0.62);
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .section {
+        margin-top: 54px;
+        padding-top: 6px;
+      }
+      .section-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+      .section-head h2 {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: 0.20em;
+        text-transform: uppercase;
+        color: rgba(16, 24, 40, 0.66);
+      }
+      .section-head p {
+        margin: 0;
+        color: rgba(16, 24, 40, 0.56);
+        font-size: 12px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      @media (max-width: 920px) {
+        .grid { grid-template-columns: 1fr; }
+      }
+      .card {
+        border: 1px solid rgba(16, 24, 40, 0.10);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.78);
+        padding: 18px 18px;
+        box-shadow: 0 18px 48px rgba(16, 24, 40, 0.10);
+      }
+      .card h3 {
+        margin: 0;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+      }
+      .meta {
+        margin-top: 6px;
+        color: rgba(16, 24, 40, 0.56);
+        font-size: 12px;
+      }
+      .list {
+        margin: 12px 0 0;
+        padding-left: 18px;
+        color: rgba(16, 24, 40, 0.78);
+      }
+      .list li {
+        margin: 8px 0;
+        line-height: 1.65;
+      }
+      .tags {
+        margin-top: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tag {
+        padding: 7px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(16, 24, 40, 0.10);
+        background: linear-gradient(180deg, rgba(125, 211, 252, 0.14), rgba(167, 139, 250, 0.10));
+        color: rgba(16, 24, 40, 0.76);
+        font-size: 12px;
+      }
+
+      .faq {
+        margin-top: 12px;
+        display: grid;
+        gap: 10px;
+      }
+      details {
+        border: 1px solid rgba(16, 24, 40, 0.10);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.72);
+        padding: 12px 12px;
+      }
+      summary {
+        cursor: pointer;
+        list-style: none;
+        font-weight: 600;
+        color: rgba(16, 24, 40, 0.86);
+      }
+      summary::-webkit-details-marker { display: none; }
+      details p {
+        margin: 10px 0 0;
+        color: rgba(16, 24, 40, 0.70);
+        line-height: 1.7;
+        font-size: 13px;
+      }
+
+      footer {
+        margin: 54px 0 28px;
+        color: rgba(16, 24, 40, 0.52);
+        font-size: 12px;
+        text-align: center;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .chip, .btn { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="container nav-inner">
+        <div class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div class="brand-title">
+            <strong>李若涵</strong>
+            <span>安徽大学 · 计算机系｜产品运营 × AI 应用</span>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a class="chip" href="#cases">案例</a>
+          <a class="chip" href="#experience">经历</a>
+          <a class="chip" href="#highlights">亮点</a>
+          <a class="chip primary" href="#chat">右下角聊天</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="container">
+      <section class="hero" aria-label="Hero">
+        <div class="watermark" aria-hidden="true"><span>李若涵</span></div>
+
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> personal landing · static export</div>
+            <div class="title">把复杂问题<br />做成可落地的产品与体验</div>
+            <p class="subtitle">
+              我关注<strong>产品运营</strong>、<strong>用户洞察</strong>、<strong>数据分析</strong>与<strong>AI 应用落地</strong>。
+              
+            </p>
+            <div class="cta">
+              <a class="btn primary" href="#cases">查看案例</a>
+              <a class="btn" href="#experience">查看经历</a>
+              <a class="btn" href="#chat">打开聊天</a>
+            </div>
+          </div>
+
+          <div class="stats" aria-label="Stats">
+            <div class="stats-row">
+              <div class="stat">
+                <strong>20000+</strong>
+                <span>用户交互日志标注/筛选</span>
+              </div>
+              <div class="stat">
+                <strong>200+</strong>
+                <span>有效反馈沉淀为台账闭环</span>
+              </div>
+              <div class="stat">
+                <strong>10+</strong>
+                <span>可落地的体验与回复优化建议</span>
+              </div>
+              <div class="stat">
+                <strong>1 个</strong>
+                <span>跨境电商 AI 答疑助手（可体验）</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cases">
+        <div class="section-head">
+          <h2>Case Studies</h2>
+          <p>不堆砌信息，只展示核心</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>跨境电商 AI 答疑助手</h3>
+            <div class="meta">个人项目 · 对话式体验 · 右下角可试用</div>
+            <ul class="list">
+              <li>聚焦高频问题：选品、物流、平台规则、售后、客服话术等。</li>
+              <li>以「更少操作」为目标：网页右下角一键唤起对话入口，适配移动端。</li>
+              <li>适合作品展示：让面试官直接用对话体验你的交付物。</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">对话式交互</span>
+              <span class="tag">知识问答</span>
+              <span class="tag">体验设计</span>
+              <span class="tag">AI 应用落地</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>从反馈到落地：我的推进方法</h3>
+            <div class="meta">可复用流程 · 适用于产品/运营/增长</div>
+            <ul class="list">
+              <li>先把问题<strong>分类</strong>：同类问题归因一致，便于迭代与复盘。</li>
+              <li>用数据做<strong>优先级</strong>：频次、影响面、修复成本三维排序。</li>
+              <li>用节奏保证<strong>落地</strong>：评审对齐 → 排期推进 → 上线验证 → 闭环复盘。</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">问题治理</span>
+              <span class="tag">数据驱动</span>
+              <span class="tag">跨团队推进</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="section-head">
+          <h2>Experience</h2>
+          <p>用结果讲故事</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>科大讯飞｜产品运营助理</h3>
+            <div class="meta">2025.12 - 2026.02</div>
+            <ul class="list">
+              <li>竞品与体验分析：全功能体验与对标，拆解模块并输出竞品分析报告；提出 <strong>10+</strong> 条优化建议。</li>
+              <li>用户研究与问题治理：筛选/标注 <strong>20000+</strong> 条交互日志，提炼 <strong>200+</strong> 条有效反馈；搭建问题分类体系与处理台账。</li>
+              <li>数据与落地：SQL 多表联查结合用户画像做分组统计分析；参与 Prompt 工程优化与评审推进，跟踪排期与上线结果。</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">竞品分析</span>
+              <span class="tag">用户研究</span>
+              <span class="tag">SQL 分析</span>
+              <span class="tag">Prompt 优化</span>
+              <span class="tag">推进落地</span>
+            </div>
+          </article>
+
+          <article class="card" id="highlights">
+            <h3>中国机器人大赛一等奖</h3>
+            <div class="meta">竞赛荣誉</div>
+            <ul class="list">
+              <li>该项目使用 linux 系统，基于 C++ 实现了服务机器人在仿真环境下的自主决策系统，涵盖移动、抓取、容器操作等 9 种原子行动。</li>
+              <li>通过仿真测试优化交互逻辑提升系统响应效率和用户操作便捷性，设计了重规划算法，主要包括人机交互、自动规划、环境感知和路径规划。</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">工程落地</span>
+              <span class="tag">团队协作</span>
+              <span class="tag">快速迭代</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="chat">
+        <div class="section-head">
+          <h2>Live Demo</h2>
+          <p>右下角可直接体验</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>右下角聊天（Coze）</h3>
+            <div class="meta">跨境电商 AI 答疑助手 · 实时对话</div>
+            <ul class="list">
+              <li>点击页面<strong>右下角气泡</strong>即可打开对话。</li>
+              <li>除了跨境电商知识答疑，ask me anything！</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>FAQ</h3>
+            <div class="meta">高频问题回答</div>
+            <div class="faq">
+              <details>
+                <summary>计算机背景为什么想做ai pm？</summary>
+                <p>技术背景让我理解ai，更能懂ai的底层逻辑，我在做出好的idea的同时也想了解用户的想法，希望通过用户的使用感受来得到正向反馈。</p>
+              </details>
+              <details>
+                <summary>专业技能</summary>
+                <p>技能：熟悉LLM、RAG、NLP等领域，理解大模型并熟练使⽤Figma、sql、Axure、MySQL，熟练使用Excel等办公软件
+                  语言：英语（CET-6：504），普通话（二级甲等：90.5），德语（A2）</p>
+              </details>
+              <details>
+                <summary>自我评价</summary>
+                <p>性格开朗，做事细心，具有良好的学习能力，愿意主动学习；能吃苦耐劳，抗压能力强，善于面对挑战；具备良好的沟通表达和组织协调能力；具有良好的文字表达能力，能够独立处理工作任务，做事认真负责，善于团队合作。</p>
+              </details>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer>© <span id="y"></span> 李若涵｜联系方式：3591455865@qq.com</footer>
+    </main>
+
+    <script>
+      document.getElementById("y").textContent = String(new Date().getFullYear());
+    </script>
+
+    <!-- Coze Chat Bubble (右下角) -->
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
+    <script>
+      function getCozePatToken() {
+        var key = "COZE_PAT_TOKEN";
+        var t = "";
+        try {
+          t = localStorage.getItem(key) || "";
+        } catch (e) {}
+        if (!t) {
+          t = window.prompt("请输入 Coze PAT Token（仅保存在本机浏览器）", "") || "";
+          if (t) {
+            try {
+              localStorage.setItem(key, t);
+            } catch (e) {}
+          }
+        }
+        return t;
+      }
+      function refreshCozePatToken() {
+        return getCozePatToken();
+      }
+      new CozeWebSDK.WebChatClient({
+        config: { bot_id: "7614511644510765066" },
+        componentProps: { title: "Coze" },
+        auth: { type: "token", token: getCozePatToken(), onRefreshToken: refreshCozePatToken },
+      });
+    </script>
+  </body>
+</html>
